@@ -2,7 +2,7 @@
 Nathalia Quintero - Angelly Cristancho
 
 ------------------------------------------------
-Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, la envíe a un servidor backend desplegado en Azure mediante una API REST, procese la imagen usando el modelo preentrenado YOLOv8, y muestre la predicción en la aplicación móvil.
+Desarrollo de una aplicación móvil para Android que captura imágenes y las envía a un servidor backend desplegado en Azure mediante una API REST. El servidor procesa las imágenes utilizando el modelo de detección de objetos YOLOv8 previamente entrenado y devuelve las predicciones a la aplicación, que las muestra al usuario en tiempo real
 
 -------------------------------------------------
 1. Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)
