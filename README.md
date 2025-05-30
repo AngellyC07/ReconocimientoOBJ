@@ -26,7 +26,9 @@ Ingresamos los datos de la máquina virtual y conectamos
 
 Una vez dentro del entorno nos dirigimos a home
 
+```python
 sudo su
+```
 
 vemos las carpetas
 
