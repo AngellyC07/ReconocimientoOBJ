@@ -24,6 +24,16 @@ Una vez dentro del entorno nos dirijimmos con el usuario a la raiz y a home con 
 
 sudo su
 
+1.3 Creación del entorno para el proyecto
+Creamos la carpeta del proyecto con el comando:
+
+mkdir proyecto
+
+Accedemos a la carpeta
+
+cd proyecto
+
+
    
 1.2 Configuración del Bitvise para el entorno
 
@@ -31,7 +41,6 @@ sudo su
 
 Una vez realizada la conexión se importa el modelo a utilizar que es el best.pt a la carpeta proyecto previamente creada.
 
-1.2 Creación del entorno para el proyecto
 
 2. Frontend – React Native
 
