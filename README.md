@@ -206,7 +206,7 @@ Colocamos la dirección IP de la máquina virtual acompañada con el :8080 que e
 
 La API estará disponible en http://172.200.240.238:8080/predict/
 
-------------------------------------------------------
+-----------------------------------------------------
 
 # **2. Frontend – React Native**
 
