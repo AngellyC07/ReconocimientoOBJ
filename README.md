@@ -15,7 +15,7 @@ Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, 
    Nombre de la VM: libre. Región: East US (predeterminada).
    Zona: 1. Imagen: Ubuntu Server 24.04 LTS.
    Tipo de autenticación: Clave pública SSH.
-   Puertos abiertos: SSH (22) y más adelante el puerto de la API (8720).
+   Puertos abiertos: SSH (22) y más adelante el puerto de la API (8080).
    
 1.2 Configuración del Bitvise para el entorno
 
