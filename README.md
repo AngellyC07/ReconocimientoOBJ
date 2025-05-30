@@ -17,4 +17,6 @@ Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, 
    Tipo de autenticación: Clave pública SSH.
    Puertos abiertos: SSH (22) y más adelante el puerto de la API (8720).
    
-1.2 Configuración del servidor
+1.2 Configuración del Bitvise
+![image](https://github.com/user-attachments/assets/fdd30aa4-d040-42eb-ba77-f3c18517baa1)
+
