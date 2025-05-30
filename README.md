@@ -5,7 +5,7 @@ Nathalia Quintero - Angelly Cristancho
 Desarrollo de una aplicación móvil para Android que captura imágenes y las envía a un servidor backend desplegado en Azure mediante una API REST. El servidor procesa las imágenes utilizando el modelo de detección de objetos YOLOv8 previamente entrenado y devuelve las predicciones a la aplicación, que las muestra al usuario en tiempo real
 
 -------------------------------------------------
-1. Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)
+## **1. Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)**
 1.1 Crear y configurar la máquina virtual en Azure.
 
 Accedemos al portal: https://portal.azure.com
@@ -208,7 +208,7 @@ La API estará disponible en http://172.200.240.238:8080/predict/
 
 ------------------------------------------------------
 
-##**2. Frontend – React Native**
+## **2. Frontend – React Native**
 
 La aplicación móvil fue desarrollada utilizando **React Native con Expo** para garantizar compatibilidad multiplataforma y facilitar el desarrollo. La arquitectura sigue un patrón de **navegación por pantallas** con **gestión de estado local** para cada componente.
   **2.2 Configuración del Entorno de Desarrollo**
