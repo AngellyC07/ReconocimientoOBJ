@@ -176,11 +176,13 @@ Llenar los siguientes datos
 ![image](https://github.com/user-attachments/assets/3fc009d4-5e17-48a2-8a82-8e29300a8343)
 
 
-Debe salir así
+Colocamos la dirección IP de la máquina virtual acompañada con el :8080 que es el puerto y con el /predict que es el endpoint que queremos probar.
 
 ![image](https://github.com/user-attachments/assets/a9f230d2-f853-4e8d-9e2b-a7afa8f53136)
 
+![image](https://github.com/user-attachments/assets/b39ff5c7-8170-49b2-bd02-637f958aabd9)
 
+La API estará disponible en http://172.200.240.238:8080/predict/
 
 ------------------------------------------------------
 
