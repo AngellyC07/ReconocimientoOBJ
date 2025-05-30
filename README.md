@@ -82,10 +82,10 @@ import uvicorn
 
 app = FastAPI()
 
-# Cargar modelo YOLOv8
+#Cargar modelo YOLOv8
 model = YOLO("best.pt")
 
-# Diccionario de clases actualizado
+#Diccionario de clases actualizado
 class_labels = {
     0: {"nombre": "Microscopio óptico avanzado", "descripcion": "Permite observar muestras pequeñas con luz y lentes."},
     1: {"nombre": "Agitador magnético con placa calefactora", "descripcion": "Mezcla y calienta líquidos en laboratorios."},
@@ -142,7 +142,7 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-# del bloque final 
+#bloque final 
 if _name_ == "_main_":
     uvicorn.run(app, host="0.0.0.0", port=8080)
 
