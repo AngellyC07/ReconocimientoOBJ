@@ -222,16 +222,16 @@ http://<IP>:8080/predict/
 
 ------------------------------------------------------
 
-2. Frontend – React Native
+##**2. Frontend – React Native**
 La aplicación móvil fue desarrollada utilizando **React Native con Expo** para garantizar compatibilidad multiplataforma y facilitar el desarrollo. La arquitectura sigue un patrón de **navegación por pantallas** con **gestión de estado local** para cada componente.
-  2.2 Configuración del Entorno de Desarrollo
-   2.2.1 Prerrequisitos del Sistema
+  **2.2 Configuración del Entorno de Desarrollo**
+   **2.2.1 Prerrequisitos del Sistema**
    ```python
    # Verificar versiones requeridas
     node --version    # v18.0.0 o superior
     npm --version     # v8.0.0 o superior
    ```
-   2.2.2 Instalación de Expo CLI
+   **2.2.2 Instalación de Expo CLI**
    ```python
    # Instalación global de Expo CLI
     npm install -g @expo/cli
@@ -239,7 +239,7 @@ La aplicación móvil fue desarrollada utilizando **React Native con Expo** para
     # Verificar instalación
     expo --version
    ```
-   2.2.3 Creación del Proyecto
+   **2.2.3 Creación del Proyecto**
     ```python
     # Crear nuevo proyecto con Expo
     npx create-expo-app proyecto_final_cd --template blank
