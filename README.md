@@ -25,6 +25,7 @@ Una vez dentro del entorno nos dirijimmos con el usuario a la raiz y a home con 
 sudo su
 
 1.3 Creación del entorno para el proyecto
+
 Creamos la carpeta del proyecto con el comando:
 
 mkdir proyecto
