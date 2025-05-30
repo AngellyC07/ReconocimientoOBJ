@@ -36,34 +36,41 @@ ls -la
 ```
 
 Vemos la versión de python
-
+```python
 python3 -V
+```
 
 Si se requiere, se actualiza paquetes
-
+```python
 apt update -y
+```
 
 Si se requiere, instalamos pip y virtualenv
-
+```python
 apt install python3-pip python3-venv -y
+```
 
 1.3 Entorno del proyecto
 
 Creamos la carpeta del proyecto
-
+```python
 mkdir proyecto
+```
 
 Accedemos a la carpeta
-
+```python
 cd proyecto
+```
 
 Creamos y activamos el entorno virtual
-
+```python
 python3 -m venv venv source venv/bin/activate
+```
 
 Instalaciones requeridas
-
+```python
 pip install fastapi uvicorn ultralytics pip install python-multipart pip install pillow
+```
 
 1.4 Traspaso del modelo .pt
 
