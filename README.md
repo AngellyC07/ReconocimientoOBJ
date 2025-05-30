@@ -72,6 +72,7 @@ nano app.py
 Código del Backend con FastAPI y YOLOv8
 Desarrollo del Backend API Usaremos FastAPI por su rendimiento y facilidad de uso. El backend aceptará una imagen, la procesará con el modelo YOLOv8 best.pt y devolverá la predicción.
 
+```python
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from ultralytics import YOLO
@@ -82,10 +83,10 @@ import uvicorn
 
 app = FastAPI()
 
-#Cargar modelo YOLOv8
+# Cargar modelo YOLOv8
 model = YOLO("best.pt")
 
-#Diccionario de clases actualizado
+# Diccionario de clases actualizado
 class_labels = {
     0: {"nombre": "Microscopio óptico avanzado", "descripcion": "Permite observar muestras pequeñas con luz y lentes."},
     1: {"nombre": "Agitador magnético con placa calefactora", "descripcion": "Mezcla y calienta líquidos en laboratorios."},
@@ -142,9 +143,11 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-#bloque final 
-if _name_ == "_main_":
+# Bloque final 
+if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8080)
+```
+
 
 
 
