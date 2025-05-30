@@ -7,6 +7,7 @@ Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, 
 -------------------------------------------------
 1. Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)
 1.1 Crear y configurar la máquina virtual en Azure.
+   
    Accedemos al portal: https://portal.azure.com
    Creamos una nueva máquina virtual con:
    Grupo de recursos: personalizado.
