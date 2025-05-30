@@ -223,6 +223,7 @@ http://<IP>:8080/predict/
 ------------------------------------------------------
 
 ##**2. Frontend – React Native**
+
 La aplicación móvil fue desarrollada utilizando **React Native con Expo** para garantizar compatibilidad multiplataforma y facilitar el desarrollo. La arquitectura sigue un patrón de **navegación por pantallas** con **gestión de estado local** para cada componente.
   **2.2 Configuración del Entorno de Desarrollo**
    **2.2.1 Prerrequisitos del Sistema**
