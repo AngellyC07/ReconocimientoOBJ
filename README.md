@@ -15,3 +15,5 @@ Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, 
    Zona: 1. Imagen: Ubuntu Server 24.04 LTS.
    Tipo de autenticación: Clave pública SSH.
    Puertos abiertos: SSH (22) y más adelante el puerto de la API (8720).
+   
+1.2 Configuración del servidor
