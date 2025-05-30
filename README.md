@@ -81,8 +81,9 @@ Se importa el modelo a utilizar que es el best.pt a la carpeta proyecto previame
 1.5 Creación de la API FastAPI
 
 Creamos un archivo app.py en la máquina virtual de Azure que contiene el backend con FastAPI para servir las predicciones del modelo YOLOv8.
-
+```python
 nano app.py
+```
 
 Código del Backend con FastAPI y YOLOv8 
 Desarrollo del Backend API Usaremos FastAPI por su rendimiento y facilidad de uso. El backend aceptará una imagen, la procesará con el modelo YOLOv8 best.pt y devolverá la predicción.
@@ -165,14 +166,16 @@ if __name__ == "__main__":
 
     
 Se verificó que el archivo fue creado
-
+```python
 ls -la
+```
 
 1.5 Ejecutar servidor FastAPI
 
 Para ejecutar el servidor de FastAPI, se usa Uvicorn
-
+```python
 uvicorn app:app --host 0.0.0.0 --port 8080 --reload
+```
 
 ![image](https://github.com/user-attachments/assets/cc151a4f-761c-4118-a4c2-d20c4b05ecb0)
 
