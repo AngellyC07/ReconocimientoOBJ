@@ -24,7 +24,7 @@ Ingresamos los datos de la máquina virtual y conectamos
 ![image](https://github.com/user-attachments/assets/1fb2fe76-25fb-456f-bce4-fde7ae6dbf69)
 
 
-Una vez dentro del entorno nos dirijimmos con el usuario a la raiz y a home con el comando:
+Una vez dentro del entorno nos dirigimos al root y a home
 
 sudo su
 
