@@ -10,7 +10,12 @@ Desarrollo de una aplicación móvil para Android que captura imágenes y las en
 1.1 Crear y configurar la máquina virtual en Azure.
    
    Accedemos al portal: https://portal.azure.com
+   
    Creamos una nueva máquina virtual con:
+
+   ![image](https://github.com/user-attachments/assets/c20295ab-083d-43c3-94ff-03b2369180a3)
+
+   
    Grupo de recursos: personalizado.
    Nombre de la VM: libre. Región: East US (predeterminada).
    Zona: 1. Imagen: Ubuntu Server 24.04 LTS.
