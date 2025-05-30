@@ -40,6 +40,8 @@ cd proyecto
 ![image](https://github.com/user-attachments/assets/fdd30aa4-d040-42eb-ba77-f3c18517baa1)
 
 Una vez realizada la conexión se importa el modelo a utilizar que es el best.pt a la carpeta proyecto previamente creada.
+
+
 ------------------------------------------------------
 
 2. Frontend – React Native
