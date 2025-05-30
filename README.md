@@ -207,8 +207,7 @@ Colocamos la dirección IP de la máquina virtual acompañada con el :8080 que e
 La API estará disponible en http://172.200.240.238:8080/predict/
 
 ------------------------------------------------------
-
-#**2. Frontend – React Native**
+# **2. Frontend – React Native**
 
 La aplicación móvil fue desarrollada utilizando **React Native con Expo** para garantizar compatibilidad multiplataforma y facilitar el desarrollo. La arquitectura sigue un patrón de **navegación por pantallas** con **gestión de estado local** para cada componente.
   **2.2 Configuración del Entorno de Desarrollo**
