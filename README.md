@@ -26,7 +26,7 @@ sudo su
 
 1.3 Creación del entorno para el proyecto
 
-Creamos la carpeta del proyecto con el comando:
+Creamos la carpeta del proyecto
 
 mkdir proyecto
 
