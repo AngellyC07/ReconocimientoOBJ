@@ -13,7 +13,7 @@ Desarrollo de una aplicación móvil para Android que captura imágenes y las en
    
    Creamos una nueva máquina virtual con:
 
-   ![image](https://github.com/user-attachments/assets/c20295ab-083d-43c3-94ff-03b2369180a3)
+   ![image](https://github.com/user-attachments/assets/048a55b0-6dba-4b9c-b716-786e2d96d44f)
 
    
    Grupo de recursos: personalizado.
