@@ -28,6 +28,22 @@ Una vez dentro del entorno nos dirigimos a home
 
 sudo su
 
+vemos las carpetas
+
+ls -la
+
+Vemos la versión de python
+
+python3 -V
+
+Si se requiere, se actualiza paquetes
+
+apt update -y
+
+Si se requiere, instalamos pip y virtualenv
+
+apt install python3-pip python3-venv -y
+
 1.3 Entorno del proyecto
 
 Creamos la carpeta del proyecto
