@@ -208,7 +208,7 @@ La API estará disponible en http://172.200.240.238:8080/predict/
 
 ------------------------------------------------------
 
-##**2. Frontend – React Native**
+#**2. Frontend – React Native**
 
 La aplicación móvil fue desarrollada utilizando **React Native con Expo** para garantizar compatibilidad multiplataforma y facilitar el desarrollo. La arquitectura sigue un patrón de **navegación por pantallas** con **gestión de estado local** para cada componente.
   **2.2 Configuración del Entorno de Desarrollo**
@@ -830,8 +830,9 @@ const styles = StyleSheet.create({
 export default MainMenuScreen
 ```
 ![image](https://github.com/user-attachments/assets/9216a7a1-fc64-4c71-bf88-e0bc005aaaec)
-Al mantener precionado el boton superior se activa modo accesibilidad
 ![image](https://github.com/user-attachments/assets/ddc37ef3-45d0-4789-b01c-69e7ef25ce27)
+
+Al mantener precionado el boton superior se activa modo accesibilidad
 
 ### **2.3.2 Pantalla de Cámara (camera-screen.js)**
 
@@ -2599,6 +2600,204 @@ const processAPIResponse = (response) => {
   }
 };
 ```
+## 🎨 **2.5 Diseño de Interfaz de Usuario**
+
+### **2.5.1 Sistema de Colores**
+
+```javascript
+const colorPalette = {
+  primary: "#5049e5",      // Azul principal
+  secondary: "#9989c0",    // Púrpura claro
+  accent: "#453589",       // Púrpura oscuro
+  background: "#f5f6fa",   // Gris claro
+  surface: "#ffffff",      // Blanco
+  text: "#1c1964",         // Azul oscuro
+};
+```
+
+### **2.5.2 Diseño Responsivo**
+
+```javascript
+// Sistema de escalado responsivo
+const { width, height } = Dimensions.get("window");
+
+const getResponsiveSize = (baseSize) => {
+  const scale = Math.min(width / 375, height / 667); // Base: iPhone 6/7/8
+  return Math.max(baseSize * scale, baseSize * 0.8); // Mínimo 80% del tamaño base
+};
+
+// Aplicación en estilos
+const styles = StyleSheet.create({
+  headerTitle: {
+    fontSize: getResponsiveSize(26),
+    fontWeight: "bold",
+    color: "white",
+    marginBottom: getResponsiveSize(12),
+    textAlign: "center",
+    lineHeight: getResponsiveSize(32),
+  },
+  // ... más estilos responsivos
+});
+```
+
+---
+
+## ♿ **2.6 Implementación de Características de Accesibilidad**
+
+### **2.6.1 Síntesis de Voz (Text-to-Speech)**
+
+```javascript
+import * as Speech from "expo-speech";
+
+// Configuración de síntesis de voz
+const speakText = (text) => {
+  Speech.speak(text, {
+    language: "es",    // Español
+    pitch: 1.0,        // Tono natural
+    rate: 0.9,         // Velocidad optimizada para comprensión
+  });
+};
+
+// Mensajes de voz contextuales
+const voiceMessages = {
+  welcome: "Menú principal. ¿Cómo quieres subir la foto?",
+  cameraInstructions: "Posiciona el objeto en el cuadrado y toca el botón para capturar",
+  galleryInstructions: "Selecciona una foto con el objeto para identificar",
+  accessibilityMode: "Modo accesibilidad activado. Toque una vez para escuchar, doble toque para seleccionar.",
+};
+```
+
+### **2.6.2 Sistema de Navegación por Voz**
+
+```javascript
+// Modo de accesibilidad con navegación por voz
+const toggleAccessibilityMode = () => {
+  const newMode = !accessibilityMode;
+  setAccessibilityMode(newMode);
+
+  if (newMode) {
+    speakText("Modo accesibilidad activado. Toque una vez para escuchar, doble toque para seleccionar.");
+    setFocusedIndex(0); // Enfocar el primer elemento
+  } else {
+    speakText("Modo accesibilidad desactivado");
+    setFocusedIndex(-1);
+  }
+};
+```
+
+### **2.6.3 Feedback Háptico**
+
+```javascript
+import { Vibration } from "react-native";
+
+// Diferentes tipos de vibración para diferentes acciones
+const vibrateDevice = (pattern = 100) => {
+  Vibration.vibrate(pattern);
+};
+
+// Patrones de vibración específicos
+const vibrationPatterns = {
+  shortTap: 50,        // Toque corto
+  confirmation: 100,   // Confirmación de acción
+  error: [100, 50, 100], // Patrón de error
+  success: [50, 50, 50], // Patrón de éxito
+};
+```
+
+---
+
+## 🔧 **2.7 Configuración de Permisos y Seguridad**
+
+### **2.7.1 Configuración de Permisos en app.json**
+
+```json
+{
+  "expo": {
+    "name": "Asistente Visual",
+    "slug": "asistente-visual",
+    "version": "1.0.0",
+    "platforms": ["ios", "android"],
+    "permissions": [
+      "CAMERA",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE",
+      "VIBRATE"
+    ],
+    "android": {
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.VIBRATE"
+      ]
+    },
+    "ios": {
+      "infoPlist": {
+        "NSCameraUsageDescription": "Esta aplicación necesita acceso a la cámara para identificar objetos",
+        "NSPhotoLibraryUsageDescription": "Esta aplicación necesita acceso a la galería para seleccionar imágenes"
+      }
+    }
+  }
+}
+```
+## 🚀 **2.8 Compilación y Distribución**
+
+### **2.8.1 Preparación para Compilación**
+
+```shellscript
+# Limpiar cache de Expo
+expo r -c
+
+# Verificar configuración
+expo doctor
+
+# Compilar para Android (desarrollo)
+expo build:android
+
+# Compilar para producción con EAS
+eas build --platform android --profile production
+```
+
+### **2.8.2 Configuración de EAS Build**
+
+```json
+// eas.json
+{
+  "cli": {
+    "version": ">= 3.0.0"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  }
+}
+```
+-----------------------------------------------------
+## 👥 Créditos
+
+- **Desarrolladoras:** Nathalia Quintero - Angelly Cristancho
+- **Institución:** Universidad Autónoma de Bucaramanga (UNAB)
+- **Laboratorio:** Smart Center UNAB
+- **Tecnología IA:** YOLOv8 (You Only Look Once v8)
+- **Framework:** React Native + Expo
+- **Backend:** FastAPI + Azure
+
+
+---
+
+## 📄 Licencia
+
+Este proyecto fue desarrollado con fines educativos y de investigación en la Universidad Autónoma de Bucaramanga (UNAB).
 
 
 
