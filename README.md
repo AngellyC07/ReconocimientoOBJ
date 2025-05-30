@@ -1,2 +1,2 @@
-# IA Reconocimiento de Objetos Asistente para Incapacitados Visuales del Laboratorio Smart Center de la Unab
+# IA Asistente de Limitantes Visuales para Reconocimiento de objetos del Laboratorio Smart Center de la Unab
 Nathalia Quintero - Angelly Cristancho
