@@ -17,7 +17,7 @@ Creamos una nueva máquina virtual con:
 
 Grupo de recursos: personalizado. Nombre de la VM: libre. Región: East US (predeterminada). Zona: 1. Imagen: Ubuntu Server 24.04 LTS. Tipo de autenticación: Clave pública SSH. Puertos abiertos: SSH (22) y más adelante el puerto de la API (8080).
 
-### **1.2 Conexión Bitvise**
+## **1.2 Conexión Bitvise**
 
 Ingresamos los datos de la máquina virtual y conectamos
 
@@ -50,7 +50,7 @@ Si se requiere, instalamos pip y virtualenv
 apt install python3-pip python3-venv -y
 ```
 
-1.3 Entorno del proyecto
+## **1.3 Entorno del proyecto**
 
 Creamos la carpeta del proyecto
 ```python
@@ -72,13 +72,13 @@ Instalaciones requeridas
 pip install fastapi uvicorn ultralytics pip install python-multipart pip install pillow
 ```
 
-1.4 Traspaso del modelo .pt
+## **1.4 Traspaso del modelo .pt**
 
 Se importa el modelo a utilizar que es el best.pt a la carpeta proyecto previamente creada.
 
 ![image](https://github.com/user-attachments/assets/9d0e8cd6-e2ad-4e37-86c1-48d978817eb9)
 
-1.5 Creación de la API FastAPI
+## **1.5 Creación de la API FastAPI**
 
 Creamos un archivo app.py en la máquina virtual de Azure que contiene el backend con FastAPI para servir las predicciones del modelo YOLOv8.
 ```python
@@ -170,7 +170,7 @@ Se verificó que el archivo fue creado
 ls -la
 ```
 
-1.5 Ejecutar servidor FastAPI
+## **1.5 Ejecutar servidor FastAPI**
 
 Para ejecutar el servidor de FastAPI, se usa Uvicorn
 ```python
@@ -180,7 +180,7 @@ uvicorn app:app --host 0.0.0.0 --port 8080 --reload
 ![image](https://github.com/user-attachments/assets/cc151a4f-761c-4118-a4c2-d20c4b05ecb0)
 
 
-1.6 Prueba de Backend
+## **1.6 Prueba de Backend**
 
 Prueba manual: Usando Postman
 
