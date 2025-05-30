@@ -226,7 +226,7 @@ La aplicación móvil fue desarrollada utilizando **React Native con Expo** para
     expo --version
    ```
    **2.2.3 Creación del Proyecto**
-    ```python
+```python
     # Crear nuevo proyecto con Expo
     npx create-expo-app proyecto_final_cd --template blank
     
@@ -236,7 +236,7 @@ La aplicación móvil fue desarrollada utilizando **React Native con Expo** para
     # Instalar dependencias adicionales
     npm install axios expo-camera expo-image-picker expo-speech expo-router
    ```
-   2.2.4 Estructura de Archivos del Proyecto
+2.2.4 Estructura de Archivos del Proyecto
    ```python
     proyecto_final_cd/
     ├── app/
