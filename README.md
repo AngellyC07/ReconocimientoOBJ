@@ -5,95 +5,107 @@ Nathalia Quintero - Angelly Cristancho
 Desarrollo de una aplicación móvil para Android que captura imágenes y las envía a un servidor backend desplegado en Azure mediante una API REST. El servidor procesa las imágenes utilizando el modelo de detección de objetos YOLOv8 previamente entrenado y devuelve las predicciones a la aplicación, que las muestra al usuario en tiempo real
 
 -------------------------------------------------
-1. Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)
-  
-1.1 Crear y configurar la máquina virtual en Azure.
-   
-   Accedemos al portal: https://portal.azure.com
-   
-   Creamos una nueva máquina virtual con:
+# **Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)**
 
-   ![image](https://github.com/user-attachments/assets/048a55b0-6dba-4b9c-b716-786e2d96d44f)
+## **1.1 Crear y configurar la máquina virtual en Azure**
 
-   
-   Grupo de recursos: personalizado.
-   Nombre de la VM: libre. Región: East US (predeterminada).
-   Zona: 1. Imagen: Ubuntu Server 24.04 LTS.
-   Tipo de autenticación: Clave pública SSH.
-   Puertos abiertos: SSH (22) y más adelante el puerto de la API (8080).
-   
-1.2 Conexión Bitvise
+Accedemos al portal: https://portal.azure.com
 
-Ingresamos los datos de la máquina virtual y conectamos
+Creamos una nueva máquina virtual con:
+
+![image](https://github.com/user-attachments/assets/048a55b0-6dba-4b9c-b716-786e2d96d44f)
+
+- Grupo de recursos: personalizado  
+- Nombre de la VM: libre  
+- Región: East US (predeterminada)  
+- Zona: 1  
+- Imagen: Ubuntu Server 24.04 LTS  
+- Tipo de autenticación: Clave pública SSH  
+- Puertos abiertos: SSH (22) y más adelante el puerto de la API (8080)  
+
+## **1.2 Conexión Bitvise**
+
+Ingresamos los datos de la máquina virtual y conectamos:
 
 ![image](https://github.com/user-attachments/assets/1fb2fe76-25fb-456f-bce4-fde7ae6dbf69)
 
+Una vez dentro del entorno nos dirigimos a home:
 
-Una vez dentro del entorno nos dirigimos a home
-
+```bash
 sudo su
+Vemos las carpetas:
 
-vemos las carpetas
-
+bash
+Copiar
+Editar
 ls -la
+Vemos la versión de Python:
 
-Vemos la versión de python
-
+bash
+Copiar
+Editar
 python3 -V
+Si se requiere, actualizamos los paquetes:
 
-Si se requiere, se actualiza paquetes
-
+bash
+Copiar
+Editar
 apt update -y
+Instalamos pip y virtualenv si es necesario:
 
-Si se requiere, instalamos pip y virtualenv
-
+bash
+Copiar
+Editar
 apt install python3-pip python3-venv -y
-
 1.3 Entorno del proyecto
+Creamos la carpeta del proyecto:
 
-Creamos la carpeta del proyecto
-
+bash
+Copiar
+Editar
 mkdir proyecto
+Accedemos a la carpeta:
 
-Accedemos a la carpeta
-
+bash
+Copiar
+Editar
 cd proyecto
 
-![image](https://github.com/user-attachments/assets/d025efe1-87d2-4a7a-97ff-bc57641ee469)
 
+Creamos y activamos el entorno virtual:
 
-Creamos y activamos el entorno virtual
-
+bash
+Copiar
+Editar
 python3 -m venv venv
 source venv/bin/activate
 
-![image](https://github.com/user-attachments/assets/9168ac05-ce40-43aa-bb9d-5da500717c30)
 
+Instalamos las dependencias necesarias:
 
-Instalaciones requeridas
-
+bash
+Copiar
+Editar
 pip install fastapi uvicorn ultralytics 
 pip install python-multipart
 pip install pillow
-   
 1.4 Traspaso del modelo .pt
+Importamos el modelo best.pt a la carpeta del proyecto.
 
-Se importa el modelo a utilizar que es el best.pt a la carpeta proyecto previamente creada.
-
-
-![image](https://github.com/user-attachments/assets/5bb68a68-1c6e-4d82-b824-f7ec22829569)
 
 
 1.5 Creación de la API FastAPI
+Creamos un archivo app.py en la máquina virtual:
 
-Creamos un archivo app.py en la máquina virtual de Azure que contiene el backend con FastAPI para servir las predicciones del modelo YOLOv8.
-
+bash
+Copiar
+Editar
 nano app.py
+Pegamos el siguiente código:
 
-Código del Backend con FastAPI y YOLOv8
-Desarrollo del Backend API Usaremos FastAPI por su rendimiento y facilidad de uso. El backend aceptará una imagen, la procesará con el modelo YOLOv8 best.pt y devolverá la predicción.
-
-```python
+python
+Copiar
+Editar
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from ultralytics import YOLO
@@ -165,45 +177,47 @@ async def predict(file: UploadFile = File(...)):
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
 # del bloque final 
-if _name_ == "_main_":
+if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8080)
-```
+Verificamos que el archivo fue creado:
 
-Se verificó que el archivo fue creado
-
+bash
+Copiar
+Editar
 ls -la
+1.6 Ejecutar servidor FastAPI
+Ejecutamos el servidor:
 
-1.5 Ejecutar servidor FastAPI
-
-Para ejecutar el servidor de FastAPI, se usa Uvicorn
-
+bash
+Copiar
+Editar
 uvicorn app:app --host 0.0.0.0 --port 8080 --reload
 
-![image](https://github.com/user-attachments/assets/2a8986a3-c992-4e16-b1da-771588530248)
+
+1.7 Prueba de Backend
+Usamos Postman:
+Entramos a https://www.postman.com e iniciamos sesión.
+
+Creamos una nueva solicitud:
 
 
-1.6 Prueba de Backend
 
-Prueba manual: Usando Postman
-
-Entramos en el siguiente enlance https://www.postman.com y se ingresa la cuenta
-
-Un vez dentro, Da click en new request
-
-![image](https://github.com/user-attachments/assets/6736a48a-f0ab-401a-bfdd-db1d0ea2206d)
-
-Llenar los siguientes datos
-
-![image](https://github.com/user-attachments/assets/3fc009d4-5e17-48a2-8a82-8e29300a8343)
+Llenamos los datos:
 
 
-Colocamos la dirección IP de la máquina virtual acompañada con el :8080 que es el puerto y con el /predict que es el endpoint que queremos probar.
 
-![image](https://github.com/user-attachments/assets/a9f230d2-f853-4e8d-9e2b-a7afa8f53136)
+Colocamos la IP de la VM seguida de :8080/predict
 
-![image](https://github.com/user-attachments/assets/b39ff5c7-8170-49b2-bd02-637f958aabd9)
 
-La API estará disponible en http://172.200.240.238:8080/predict/
+
+
+
+La API estará disponible en:
+
+arduino
+Copiar
+Editar
+http://<IP>:8080/predict/
 
 ------------------------------------------------------
 
