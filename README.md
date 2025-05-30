@@ -46,6 +46,9 @@ Creamos y activamos el entorno virtual
 python3 -m venv venv
 source venv/bin/activate
 
+![image](https://github.com/user-attachments/assets/9168ac05-ce40-43aa-bb9d-5da500717c30)
+
+
 Instalaciones requeridas
 
 pip install fastapi uvicorn ultralytics 
