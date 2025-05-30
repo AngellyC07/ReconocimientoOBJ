@@ -148,6 +148,37 @@ if _name_ == "_main_":
     uvicorn.run(app, host="0.0.0.0", port=8080)
 ```
 
+Se verificó que el archivo fue creado
+
+ls -la
+
+1.5 Ejecutar servidor FastAPI
+
+Para ejecutar el servidor de FastAPI, se usa Uvicorn
+
+uvicorn app:app --host 0.0.0.0 --port 8080 --reload
+
+![image](https://github.com/user-attachments/assets/2a8986a3-c992-4e16-b1da-771588530248)
+
+
+1.6 Prueba de Backend
+
+Prueba manual: Usando Postman
+
+Entramos en el siguiente enlance https://www.postman.com y se ingresa la cuenta
+
+Un vez dentro, Da click en new request
+
+![image](https://github.com/user-attachments/assets/6736a48a-f0ab-401a-bfdd-db1d0ea2206d)
+
+Llenar los siguientes datos
+
+![image](https://github.com/user-attachments/assets/3fc009d4-5e17-48a2-8a82-8e29300a8343)
+
+
+Debe salir así
+
+![image](https://github.com/user-attachments/assets/a9f230d2-f853-4e8d-9e2b-a7afa8f53136)
 
 
 
