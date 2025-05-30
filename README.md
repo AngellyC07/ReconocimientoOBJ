@@ -143,8 +143,8 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-# Bloque final 
-if __name__ == "__main__":
+# del bloque final 
+if _name_ == "_main_":
     uvicorn.run(app, host="0.0.0.0", port=8080)
 ```
 
