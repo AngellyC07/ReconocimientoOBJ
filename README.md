@@ -18,6 +18,7 @@ Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, 
    Puertos abiertos: SSH (22) y más adelante el puerto de la API (8080).
    
 1.2 Conexión Bitvise
+
 Ingresamos los datos de la máquina virtual y conectamos
 Una vez dentro del entorno nos dirijimmos con el usuario a la raiz a home
 
