@@ -20,7 +20,7 @@ Objetivo: Desarrollar una aplicación móvil para Android que capture una foto, 
 1.2 Conexión Bitvise
 
 Ingresamos los datos de la máquina virtual y conectamos
-Una vez dentro del entorno nos dirijimmos con el usuario a la raiz a home
+Una vez dentro del entorno nos dirijimmos con el usuario a la raiz y a home con el comando:
 
 sudo su
 
