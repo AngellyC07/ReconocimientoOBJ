@@ -74,8 +74,10 @@ Creamos un archivo app.py en la máquina virtual de Azure que contiene el backen
 
 nano app.py
 
-Código del Backend con FastAPI y YOLOv8 Desarrollo del Backend API Usaremos FastAPI por su rendimiento y facilidad de uso. El backend aceptará una imagen, la procesará con el modelo YOLOv8 best.pt y devolverá la predicción.
+Código del Backend con FastAPI y YOLOv8 
+Desarrollo del Backend API Usaremos FastAPI por su rendimiento y facilidad de uso. El backend aceptará una imagen, la procesará con el modelo YOLOv8 best.pt y devolverá la predicción.
 
+```python
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from ultralytics import YOLO
@@ -146,9 +148,12 @@ async def predict(file: UploadFile = File(...)):
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=500)
 
-# del bloque final 
-if _name_ == "_main_":
+# Ejecutar el servidor
+if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8080)
+```
+
+    
 Se verificó que el archivo fue creado
 
 ls -la
