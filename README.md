@@ -38,6 +38,9 @@ Accedemos a la carpeta
 
 cd proyecto
 
+![image](https://github.com/user-attachments/assets/d025efe1-87d2-4a7a-97ff-bc57641ee469)
+
+
 Creamos y activamos el entorno virtual
 
 python3 -m venv venv
