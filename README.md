@@ -20,6 +20,10 @@ Desarrollo de una aplicación móvil para Android que captura imágenes y las en
 1.2 Conexión Bitvise
 
 Ingresamos los datos de la máquina virtual y conectamos
+
+![image](https://github.com/user-attachments/assets/1fb2fe76-25fb-456f-bce4-fde7ae6dbf69)
+
+
 Una vez dentro del entorno nos dirijimmos con el usuario a la raiz y a home con el comando:
 
 sudo su
@@ -34,7 +38,14 @@ Accedemos a la carpeta
 
 cd proyecto
 
+Creamos y activamos el entorno virtual
 
+python3 -m venv venv
+source venv/bin/activate
+
+Instalaciones requeridas
+
+pip install fastapi uvicorn ultralytics 
    
 1.2 Configuración del Bitvise para el entorno
 
