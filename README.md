@@ -6,7 +6,7 @@ Desarrollo de una aplicación móvil para Android que captura imágenes y las en
 
 -------------------------------------------------
 ## **1. Backend – FastAPI en Azure (Ubuntu Server 24.04 LTS)**
-1.1 Crear y configurar la máquina virtual en Azure.
+### **1.1 Crear y configurar la máquina virtual en Azure.**
 
 Accedemos al portal: https://portal.azure.com
 
@@ -17,7 +17,7 @@ Creamos una nueva máquina virtual con:
 
 Grupo de recursos: personalizado. Nombre de la VM: libre. Región: East US (predeterminada). Zona: 1. Imagen: Ubuntu Server 24.04 LTS. Tipo de autenticación: Clave pública SSH. Puertos abiertos: SSH (22) y más adelante el puerto de la API (8080).
 
-1.2 Conexión Bitvise
+### **1.2 Conexión Bitvise**
 
 Ingresamos los datos de la máquina virtual y conectamos
 
